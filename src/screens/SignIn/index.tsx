@@ -1,10 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 import { StatusBar, StyleSheet, Text, View, TextInput, TouchableOpacity } from "react-native";
 import { CaretLeft } from "phosphor-react-native";
+import { useNavigation } from "@react-navigation/native";
 
 export function SignIn() {
+  const navigation = useNavigation();
+
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  function handleLogin() {
+    navigation.navigate("ChatRoom");
+  }
+
   return (
-    <View style={{ flex: 1 }}>
+    <View style={{ flex: 1, backgroundColor: "#fff" }}>
       <StatusBar barStyle={"dark-content"} backgroundColor={"#fff"} />
 
       <View style={styles.header}>
@@ -23,26 +34,38 @@ export function SignIn() {
 
         <View style={styles.form}>
           <TextInput
+            value={name}
             style={styles.inputs}
-            placeholder="Email"
-            placeholderTextColor={"#000"}
+            placeholder="Nome"
+            placeholderTextColor={"#99999b"}
+            onChangeText={(text) => setName(text)}
           />
 
           <TextInput
+            value={email}
             style={styles.inputs}
-            placeholder="Senha"
-            placeholderTextColor={"#000"}
+            placeholder="Email"
+            placeholderTextColor={"#99999b"}
+            onChangeText={(text) => setEmail(text)}
           />
 
-          <TouchableOpacity activeOpacity={0.6} style={styles.formButton}>
+          <TextInput
+            value={password}
+            style={styles.inputs}
+            placeholder="Senha"
+            placeholderTextColor={"#99999b"}
+            onChangeText={(text) => setPassword(text)}
+          />
+
+          <TouchableOpacity activeOpacity={0.6} style={styles.formButton} onPress={handleLogin}>
             <Text style={{ color: "#fff", fontWeight: "500", fontSize: 20, letterSpacing: 1.4 }}>
-              Login
+              Acessar
             </Text>
           </TouchableOpacity>
 
           <TouchableOpacity activeOpacity={0.6}>
             <Text style={{ textAlign: "center", color: "#000", fontSize: 18, fontWeight: "300" }}>
-              Não tem uma conta? crie sua{"\n"} conta agora!
+              Crie sua conta!
             </Text>
           </TouchableOpacity>
         </View>
@@ -79,7 +102,7 @@ const styles = StyleSheet.create({
     marginBottom: 20,
     color: "#000",
     borderWidth: 1,
-    borderColor: "#000",
+    borderColor: "#99999b",
     padding: 12,
     borderRadius: 6
   },

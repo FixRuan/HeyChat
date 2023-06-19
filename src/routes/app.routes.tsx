@@ -1,23 +1,21 @@
-/* eslint-disable prettier/prettier */
+import React from "react";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
-import React from 'react';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
-
-import { SignIn } from '../screens/SignIn';
-import { ChatRoom } from '../screens/ChatRoom';
-import { Messages } from '../screens/Messages';
-import { Search } from '../screens/Search';
+import { SignIn } from "../screens/SignIn";
+import { ChatRoom } from "../screens/ChatRoom";
+import { Messages } from "../screens/Messages";
+import { Search } from "../screens/Search";
 
 const AppStack = createNativeStackNavigator();
 
 export function AppRoutes() {
   return (
-    <AppStack.Navigator initialRouteName="ChatRoom">
+    <AppStack.Navigator initialRouteName="SignIn">
       <AppStack.Screen
         name="SignIn"
         component={SignIn}
         options={{
-          title: 'Faça Login',
+          headerShown: false,
         }}
       />
 
