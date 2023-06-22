@@ -1,4 +1,4 @@
 # HeyChat
 Chat with React Native
 
-[![Skills](https://skillicons.dev/icons?i=typescript)](https://skillicons.dev)
+[![Skills](https://skillicons.dev/icons?i=react,typescript,firebase)](https://skillicons.dev)
