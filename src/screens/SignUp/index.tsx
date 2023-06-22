@@ -3,18 +3,19 @@ import { StatusBar, StyleSheet, Text, View, TextInput, TouchableOpacity } from "
 import { CaretLeft } from "phosphor-react-native";
 import { useNavigation } from "@react-navigation/native";
 
-export function SignIn() {
+export function SignUp() {
   const navigation = useNavigation();
 
+  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  function handleSignIn() {
+  function handleLogin() {
     navigation.navigate("ChatRoom");
   }
 
-  function handleSignUp() {
-    navigation.navigate("SignUp");
+  function handleGoBack() {
+    navigation.goBack();
   }
 
   return (
@@ -22,8 +23,10 @@ export function SignIn() {
       <StatusBar barStyle={"dark-content"} backgroundColor={"#fff"} />
 
       <View style={styles.header}>
-        <CaretLeft size={32} color="#000" weight="bold" />
-        <Text style={styles.headerTitle}>Faça Login</Text>
+        <TouchableOpacity activeOpacity={0.6} onPress={handleGoBack}>
+          <CaretLeft size={32} color="#000" weight="bold" />
+        </TouchableOpacity>
+        <Text style={styles.headerTitle}>Cadastre-se</Text>
       </View>
 
       <View style={styles.container}>
@@ -36,6 +39,14 @@ export function SignIn() {
         </Text>
 
         <View style={styles.form}>
+          <TextInput
+            value={name}
+            style={styles.inputs}
+            placeholder="Nome"
+            placeholderTextColor={"#99999b"}
+            onChangeText={(text) => setName(text)}
+          />
+
           <TextInput
             value={email}
             style={styles.inputs}
@@ -54,15 +65,15 @@ export function SignIn() {
             onChangeText={(text) => setPassword(text)}
           />
 
-          <TouchableOpacity activeOpacity={0.6} style={styles.formButton} onPress={handleSignIn}>
+          <TouchableOpacity activeOpacity={0.6} style={styles.formButton} onPress={handleLogin}>
             <Text style={{ color: "#fff", fontWeight: "500", fontSize: 20, letterSpacing: 1.4 }}>
-              Acessar
+              Cadastrar
             </Text>
           </TouchableOpacity>
 
-          <TouchableOpacity activeOpacity={0.6} onPress={handleSignUp}>
+          <TouchableOpacity activeOpacity={0.6}>
             <Text style={{ textAlign: "center", color: "#000", fontSize: 18, fontWeight: "300" }}>
-              Crie sua conta!
+              Já possuo uma conta
             </Text>
           </TouchableOpacity>
         </View>

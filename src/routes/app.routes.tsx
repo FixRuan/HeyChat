@@ -2,6 +2,7 @@ import React from "react";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
 import { SignIn } from "../screens/SignIn";
+import { SignUp } from "../screens/SignUp";
 import { ChatRoom } from "../screens/ChatRoom";
 import { Messages } from "../screens/Messages";
 import { Search } from "../screens/Search";
@@ -14,6 +15,14 @@ export function AppRoutes() {
       <AppStack.Screen
         name="SignIn"
         component={SignIn}
+        options={{
+          headerShown: false,
+        }}
+      />
+
+      <AppStack.Screen
+        name="SignUp"
+        component={SignUp}
         options={{
           headerShown: false,
         }}
