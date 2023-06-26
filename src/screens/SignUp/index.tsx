@@ -10,8 +10,11 @@ export function SignUp() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  function handleLogin() {
-    navigation.navigate("ChatRoom");
+  function handleSignUp() {
+    console.log({ name, email, password });
+    if (name === "" || email === "" || password === "") return;
+
+    //...
   }
 
   function handleGoBack() {
@@ -65,13 +68,13 @@ export function SignUp() {
             onChangeText={(text) => setPassword(text)}
           />
 
-          <TouchableOpacity activeOpacity={0.6} style={styles.formButton} onPress={handleLogin}>
+          <TouchableOpacity activeOpacity={0.6} style={styles.formButton} onPress={handleSignUp}>
             <Text style={{ color: "#fff", fontWeight: "500", fontSize: 20, letterSpacing: 1.4 }}>
               Cadastrar
             </Text>
           </TouchableOpacity>
 
-          <TouchableOpacity activeOpacity={0.6}>
+          <TouchableOpacity activeOpacity={0.6} onPress={handleGoBack}>
             <Text style={{ textAlign: "center", color: "#000", fontSize: 18, fontWeight: "300" }}>
               Já possuo uma conta
             </Text>
