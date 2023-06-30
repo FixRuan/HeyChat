@@ -1,7 +1,7 @@
 # HeyChat
 
-- [ ] SignIn Screen
-- [ ] SignUp Screen
+- [x] SignIn Screen
+- [x] SignUp Screen
 - [ ] ChatRoom Screen
 - [ ] Messages Screen
 
