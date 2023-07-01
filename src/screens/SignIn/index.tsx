@@ -1,5 +1,14 @@
 import React, { useState } from "react";
-import { StatusBar, StyleSheet, Text, View, TextInput, TouchableOpacity } from "react-native";
+
+import {
+  StatusBar,
+  StyleSheet,
+  Text, 
+  View, 
+  TextInput, 
+  TouchableOpacity 
+} from "react-native";
+
 import { CaretLeft } from "phosphor-react-native";
 import { useNavigation } from "@react-navigation/native";
 
