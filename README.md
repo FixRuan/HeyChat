@@ -4,6 +4,7 @@
 - [x] SignUp Screen
 - [ ] ChatRoom Screen
 - [ ] Messages Screen
+- [ ] Search Screen
 
 <br>
 
