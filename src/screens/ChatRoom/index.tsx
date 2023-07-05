@@ -1,5 +1,5 @@
 import React from "react";
-import { FileSearch } from "phosphor-react-native";
+import { MagnifyingGlass } from "phosphor-react-native";
 import { StyleSheet, Text, View } from "react-native";
 import { RFValue, RFPercentage } from "react-native-responsive-fontsize";
 
@@ -8,7 +8,7 @@ export function ChatRoom() {
     <View>
       <View style={styles.header}>
         <Text style={styles.headerTitle}>Grupos</Text>
-        <FileSearch size={32} color="#ffffff" />
+        <MagnifyingGlass size={32} color="#ffffff" />
       </View>
     </View>
   );
