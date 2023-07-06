@@ -5,7 +5,7 @@ import { RFValue, RFPercentage } from "react-native-responsive-fontsize";
 
 export function ChatRoom() {
   return (
-    <View>
+    <View style={styles.container}>
       <View style={styles.header}>
         <Text style={styles.headerTitle}>Grupos</Text>
         <MagnifyingGlass size={32} color="#ffffff" />
@@ -15,6 +15,11 @@ export function ChatRoom() {
 }
 
 const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    flexDirection: "column",
+    backgroundColor: "#ffffff"
+  },
   header: {
     width: "100%",
     height: RFPercentage(20),
